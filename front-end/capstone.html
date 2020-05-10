@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="Caps.png" type="image/x-icon">
+<title>Capstone</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.alert {
+  padding: 50px;
+  background-color: #f44336;
+  color: white;
+  font-size: 36px;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 24px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+
+.header {
+  padding: 80px;
+  text-align: center;
+  width: 1500px; 
+  background: #6464C8;
+  color: white;
+}
+
+
+.header h1 {
+  font-size: 40px;
+  width: 1400px;
+}
+
+
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  width: 1500px;
+}
+
+
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px; 
+}
+
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+.row {  
+  display: -ms-flexbox; 
+  width: 1400px;
+  display: flex;
+  -ms-flex-wrap: wrap; 
+  flex-wrap: wrap;
+}
+
+.row2 {  
+  display: -ms-flexbox; 
+  width: 1400px; 
+  display: flex;
+  -ms-flex-wrap: wrap; 
+  flex-wrap: wrap;
+}
+
+.row3 {  
+  display: -ms-flexbox; 
+  width: 1400px;
+  display: flex;
+  -ms-flex-wrap: wrap; 
+  flex-wrap: wrap;
+}
+
+.row4 {  
+  display: -ms-flexbox; 
+  width: 1400px; 
+  display: flex;
+  -ms-flex-wrap: wrap; 
+  flex-wrap: wrap;
+}
+
+
+.side {
+  -ms-flex: 30%; 
+  width: 1400px; 
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+.side2 {
+  -ms-flex: 30%; 
+  width: 1400px; 
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+.side3 {
+  -ms-flex: 30%; 
+  width: 1400px; 
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+.side4 {
+  -ms-flex: 30%; 
+  width: 1400px; 
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+
+
+.main {   
+  -ms-flex: 70%; 
+  width: 1400px; 
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+.main2 {   
+  -ms-flex: 70%; 
+  width: 1400px;
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+.main3 {   
+  -ms-flex: 70%; 
+  width: 1400px; 
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+.main4 {   
+  -ms-flex: 70%; 
+  width: 1400px;
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+form{
+  border: 4px solid #f1f1f1;
+}
+
+.container {
+  padding: 20px;
+  background-color: #f1f1f1;
+}
+
+input[type=text], input[type=submit]{
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+input[type=checkbox]{
+  margin-top: 16px;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+}
+
+input[type=submit]:hover {
+opacity: 0.8;
+}
+
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+.box{
+  display:none;
+  width: 100%
+}
+
+a:hover + .box,.box:hover{
+  display: block;
+  position: relative;
+  z-index: 100; 
+}
+
+
+.footer {
+  padding: 20px;
+  width: 1400px; 
+  text-align: center;
+  background: #6464C8;
+}
+
+#more {display: none;
+
+#myBtn1 {
+  display: none;
+  position: relative;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn1:hover {
+  background-color: #555;
+}
+
+
+}
+
+
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+
+@media screen and (max-width: 700px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+  
+
+
+<div class="header">
+
+
+
+
+<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong>Danger! CORONA VIRUS!</strong> STAY HOME!.
+</div>
+
+  <h1>VEGA Project</h1>
+  <p>A website created by Victor, Andrew, Giovani, and Eduardo. Four computer scientest, who against all odds will save all the data and visualize it to you sheep!</p>
+</div>
+
+<div class="navbar">
+  <a href="#Currency">Currency</a>
+  <a href="#Oil">Oil</a>
+  <a href="#News">News</a>
+  <a href="https://play.google.com/store/apps/details?id=appinventor.ai_granaded.test" target="_blank">App Store</a>
+</div>
+
+<div class="row">
+  <div class="side">
+    <h2>About VEGA</h2>
+    
+    
+    <p>We here at VEGA strive to bring up to date data visualized in a fun and easy way for anyone to understand! Our team consists of four members which are Andrew, Giovanni, Eduardo, and Victor. We are all experinced programmers with skills in datamining, data visualization, API applications, backend implementation and frontend design. Essentially Full Stack Developers, this site will be used to showcase our skills described earlier. Please enjoy and feel free to reach out to report any bugs or issues associated with the site! </p>
+
+    <h3>Victor Herman</h3>
+    <p>Victor is a senior attending Kean University pursuing his Bachelors in Computer Science with the Cyber Option and a minor in Math!
+      Victor enjoys coding with many different languages and the different applications which can be created. 
+
+
+    </p>
+    <h3>Giovanni Cabrera</h3>
+    <p>Giovanni is a senior attending Kean University pursuing his Bachelors in Computer Science.
+    Giovanni enjoys everything datamining related, whether it's classification, regression analysis, chi-square or data wharehousing techniqes. </p>
+
+    <h3>Eduardo Granados</h3>
+    <p>Eduardo is a senior attending Kean University pursuing his Bachelors in Computer Science. Eduardo has a passion for mobile applications using Android Studio, his favorite programming language is Python.</p>
+
+    <h3>Andrew Nashid</h3>
+    <p>Andrew is a senior attending Kean University pursuing his Bachelors in Computer Science. Andrew loves to learn and can do hours of research in a sitting. Andrew enjoys working on cars in his free time and learning miscellaneous skills. </p>
+
+
+  </div>
+  <div class="main">
+
+    <h2>Our Capstone Project</h2>
+    <h5>We will be collecting data from different sources such as currency and oil prices over a period of time and produce graphs from the data collected. </h5>
+    
+      
+
+
+   
+    <p>Andrew and Eduardo have created multiple API's to gather and clean data which will be used in the data visualization aspect of the project. Together they have gathered over 10,000 records which helps give the graphs more detail over a span of time. </p>
+    <p>Victor and Giovanni have taken the results from Andrew and Eduardo and visualized those numbers into graphs which will help users determine how a currency or oil price might act in the future. We used Google Graphs to visualize the data gathered, Google Graphs is a great way to make clear and effective graphs.  </p>
+
+
+    <h2 >Informative Video on Oil</h2>
+    <h5>This video explains the different oil types our graphs will be displaying. It's important to be knowlegeable of crude oil if your looking to trade in this market.  
+
+    </h5>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Yp4wFZeY0fk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <p>This video is about crude oil and the key differences between two of the most populare types of crude oil. </p>
+    <p>Graphs are useful to determine special patterns which can be used to better allocate resources or to make smarter business decisions. </p>
+    <br>
+    
+  </div>
+</div>
+
+
+<div class="row2">
+  <div class="side2">
+    <h2 id="Currency">Currency</h2>
+    
+    
+    <p>We have loaded over 10 years of currency data. The data we used is the foreign currency values compared to the US Dollar. </p>
+    
+  </div>
+<div class="main2">
+    <h2>Curency Prices from around the world</h2>
+    <h5>Countries include but are not limited to: <h5>
+    <h5> Swiss Franc (CHF) <h5>
+    <h5> Canadian Dollar (CAD) <h5> 
+    <h5> Danish Krone (DKK) <h5>
+    <h5> Turkish lira (TRY) <h5> 
+    <h5> Chinese Yuan (CNY) <h5>
+    <h5> Swedish Krona (SEK) <h5>
+    <h5> United States Dollar (USD) <h5>
+    <h5> Brazilian Real (BRL) <h5> 
+    <h5> Singapore Dollar (SGD) <h5>
+    <h5> Australian Dollar (AUD) <h5> 
+    <BR>
+    <BR>
+    <button onclick="topFunction()" id="myBtn1" title="Go to top">Top of Page</button>
+    
+    <br>
+    <h2>Currency Chart</h2>
+    <h5>The following chart shows the conversion rate to the American dollar!</h5>
+    <div class="fakeimg" id="chart" style="width: 1400px; height:1000px;"> 
+
+      <html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function splitToChunks(array, parts ){
+          let result = [];
+          for (let i = parts; i > 0; i--){
+            result.push(array.splice(0, Math.ceil(array.length/i)));
+          }
+          return result ;
+        }
+
+        function properForm(array){
+            var x1 = array; 
+            var z1 = [];
+            test2A= [];
+            var y1 = ['Date', 'Swiss Franc', 'Canadian Dollar', 'Danish Krone', 'Turkish Lira', 'Chinese Yuan', 'Swedish Krona', 'United States Dollar', 'Brazilian Real', 'Singapore Dollar', 'Australian Dollar'];
+
+            x1len = x1.length;
+
+            var myArray1 = [[]]; 
+            myArray1[0] = y1;
+
+            for (i=0; i<x1len; i++){
+          z1.push(x1[i].date , x1[i].CHF, x1[i].CAD, x1[i].DKK, x1[i].TRY, x1[i].CNY, x1[i].SEK, x1[i].USD, x1[i].BRL, x1[i].SGD, x1[i].AUD); 
+        }
+            z1len = 2843; 
+        result1 = splitToChunks(z1, z1len); 
+              for (i=0; i<z1len; i++){
+
+                test2A = result1[i].map(Number);
+
+                vals1 = test2A.slice(1,11);
+
+                date1 = result1[i].slice(0,1);
+                z1.push(date1[0]); 
+
+                final1 = z1.concat(vals1);
+                z1 = []; 
+                myArray1.push(final1);
+
+              }
+
+            
+
+            
+
+            return myArray1;
+
+        }
+
+      function drawChart() {
+
+        var jsonData = $.ajax({
+
+          url: "getData.php",
+          dataType: "json",
+          async: false
+            }).responseText;
+        var x = JSON.parse(jsonData); 
+        
+
+        console.log(x); 
+        
+        
+          Test12 = properForm(x);
+          console.log(Test12); 
+
+        var data = new google.visualization.arrayToDataTable(Test12);
+
+        var options = {
+          title : 'Currency Values Compared to The US Dollar',
+          chartArea: {width: 9000},
+          chartArea: {margin:{left:5}},
+          selectionMode: 'multiple',
+          zoomable: true, 
+          pannable: true, 
+          vAxis: {title: 'Price converted to US Dollar'},
+          hAxis: {title: 'Date'},
+          series: {5: {type: 'line'}}        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  
+</html>
+
+
+
+
+
+
+    </div>
+    
+  </div>
+</div>
+
+<div class="row3">
+  <div class="side3">
+    <h2 id="Oil">Oil</h2>
+    
+    
+    <p>Various oil prices from two oil providers: Oil WTI and Oil Brent. 
+      <BR>
+      <p>Oil WTI - West Texas Intermediate, also known as Texas light sweet. This is a grade of crude oil used as a benchmark in oil pricing. This oil is described as light crude oil because of its relatively low density, and sweet because of it's low sulfur content.
+      </p> 
+      <BR>
+      <p>Oil Brent - Brent Crude is a major trading classification of sweet light crude oil which serves as another benchmark in oil pricing. This oil is described as light crude oil because of it's low density, and sweet because of it's low sulfur content. 
+      </p>
+      <BR>
+      <h3> Whats the difference?</h3>
+      <p>
+        The major difference between the crude oils is 
+        <span id="dots">...</span><span id="more">
+        <br>
+        <BR>
+        THE LOCATION!
+        <BR>
+        <br>
+        West Texas Intermediate(WTI) is sourced from U.S. oil fields found in Texas, Louisiana, and North Dakota.
+        
+        <br>
+        <br>
+        Brent crude oil is sourced from oil fields in the North Sea between the Shetland Islands and Norway
+        
+        
+
+      
+</span></p>
+<button class ="myBtn" onclick="myFunction()" id="myBtn" >Read more</button>
+
+
+<script>
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
+    </p>
+    
+  </div>
+<div class="main3">
+    <h2>Graphs of Oil WTI and Brent values over the years...</h2>
+    <BR>
+    <button onclick="topFunction()" id="myBtn1" title="Go to top">Top of Page</button>
+    <br>
+    <h2>Oil WTI Graph</h2>
+    <h5>The following data was obtained by the legendary Andrew and Eduardo. They have collected data from the past year</h5>
+    <div class="fakeimg" id='Chart2' style="width: 1400px; height:1000px;">
+      <html>
+  <head>
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart2);
+
+      function splitToChunks2(array, parts ){
+          let result = [];
+          for (let i = parts; i > 0; i--){
+            result.push(array.splice(0, Math.ceil(array.length/i)));
+          }
+          return result ;
+        }
+
+        function properForm2(array){
+            var x1 = array; 
+            var z1 = [];
+            test2A= [];
+            var y1 = ['Date', 'Price'];
+
+            x1len = x1.length;
+
+            var myArray1 = [[]]; 
+            myArray1[0] = y1;
+
+            for (i=0; i<x1len; i++){
+          z1.push(x1[i].created_at , x1[i].price); 
+        }
+            z1len = 2605; 
+        result1 = splitToChunks2(z1, z1len); 
+              for (i=0; i<z1len; i++){
+
+                test2A = result1[i].map(Number);
+
+                vals1 = test2A.slice(1,2);
+
+                date1 = result1[i].slice(0,1);
+                z1.push(date1[0]); 
+
+                final1 = z1.concat(vals1);
+                z1 = []; 
+                myArray1.push(final1);
+
+              }
+
+            
+
+            
+
+            return myArray1;
+
+        }
+
+      function drawChart2() {
+
+        var jsonData2 = $.ajax({
+
+          url: "getBrentData.php",
+          dataType: "json",
+          async: false
+            }).responseText;
+        var x2 = JSON.parse(jsonData2); 
+        
+
+        console.log(x2); 
+        
+        
+          Test13 = properForm2(x2);
+          console.log(Test13); 
+
+
+
+
+       
+
+        var data2 = new google.visualization.arrayToDataTable(Test13);
+
+        var options2 = {
+          title : 'The Price of Brent Oil from 2019-2020',
+          chartArea: {width: 9000},
+          chartArea: {margin:{left:5}},
+          selectionMode: 'multiple',
+          zoomable: true, 
+          pannable: true, 
+          vAxis: {title: 'Price in US Dollar'},
+          hAxis: {title: 'Date'},
+          series: {5: {type: 'line'}}        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart3'));
+
+        chart.draw(data2, options2);
+      }
+    </script>
+</head>
+  
+</html>
+
+       </div>
+      <html>
+  <head>
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart3);
+
+      function splitToChunks3(array, parts ){
+          let result = [];
+          for (let i = parts; i > 0; i--){
+            result.push(array.splice(0, Math.ceil(array.length/i)));
+          }
+          return result ;
+        }
+
+        function properForm3(array){
+            var x1 = array; 
+            var z1 = [];
+            test2A= [];
+            var y1 = ['Date', 'Price'];
+
+            x1len = x1.length;
+
+            var myArray1 = [[]]; 
+            myArray1[0] = y1;
+
+            for (i=0; i<x1len; i++){
+          z1.push(x1[i].created_at , x1[i].price); 
+        }
+            z1len = 134; 
+        result1 = splitToChunks3(z1, z1len); 
+              for (i=0; i<z1len; i++){
+
+                test2A = result1[i].map(Number);
+
+                vals1 = test2A.slice(1,2);
+
+                date1 = result1[i].slice(0,1);
+                z1.push(date1[0]); 
+
+                final1 = z1.concat(vals1);
+                z1 = []; 
+                myArray1.push(final1);
+
+              }
+
+            
+
+            
+
+            return myArray1;
+
+        }
+
+      function drawChart3() {
+
+        var jsonData = $.ajax({
+
+          url: "getWtiData.php",
+          dataType: "json",
+          async: false
+            }).responseText;
+        var x = JSON.parse(jsonData); 
+        
+
+        console.log(x); 
+        
+        
+          Test14 = properForm3(x);
+          console.log(Test12); 
+
+
+
+
+       
+
+        var data = new google.visualization.arrayToDataTable(Test14);
+
+        var options = {
+          title : 'The Price of WTI Oil from 2010-2020',
+          chartArea: {width: 9000},
+          chartArea: {margin:{left:5}},
+          selectionMode: 'multiple',
+          zoomable: true, 
+          pannable: true, 
+          vAxis: {title: 'Price in US Dollar'},
+          hAxis: {title: 'Date'},
+          series: {5: {type: 'line'}}        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('Chart2'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  </head>
+  <body>
+
+    
+<h2>Oil Brent Graph</h2>
+    <h5>The following data was obtained by the legendary Andrew and Eduardo. They have collected thousands of records ranging from the past 10 years</h5>
+    <div class="fakeimg" id="chart3" style="width:1400px; height:1000px;">
+    
+  </div>
+  </body>
+</html>
+    </div>
+    
+    
+</div>
+
+
+
+<div class="row4">
+  <div class="side4">
+
+
+
+
+
+
+
+
+
+    <h2>News</h2>
+    <BR>
+    <button onclick="topFunction()" id="myBtn1" title="Go to top">Top of Page</button>
+    
+    <p>News regarding currencies and the business world</p>
+    <br>
+    <h2>Hover over any link for a preview!</h2>
+    <br>
+    <p>This section is loaded with links of popular sites relating to the topics discussed on the site.</p>
+    <br>
+    <p>NOTE: some links will not display to to privacy concerns from host site and to prevent click jacking attempts.  </p>
+    
+  </div>
+<div class="main4">
+    <h2 id="News">News stories</h2>
+    <h3>Live Links</h3>
+
+    This is a live preview for <a href="https://en.wikipedia.org/" id="myLink">Random Link</a>
+    <div class="box">
+      <iframe id= "myFrame" src= "" width="500px" height="500px">
+      </iframe>
+    </div>
+    
+    <BR>
+    <br>
+    This is a live preview for <a href="https://en.wikipedia.org/" id="myLink">Random Link</a>
+    <div class="box">
+      <iframe id= "myFrame2" src= "" width="500px" height="500px">
+      </iframe>
+    </div>
+    <BR>
+    <br>
+    This is a live preview for <a href="https://en.wikipedia.org/" id="myLink">Random Link</a>
+    <div class="box">
+      <iframe id= "myFrame3" src= "" width="500px" height="500px">
+      </iframe>
+    </div>
+    <BR>
+    <br>
+    This is a live preview for <a href="https://oilprice.com/" >Oil Price</a>
+    <div class="box">
+      <iframe id= "myFrame4" src= "https://oilprice.com/" width="500px" height="500px">
+      </iframe>
+    </div>
+    <BR>
+    <br>
+    This is a live preview for <a href="markets.businessinsider.com/">MarketWatch</a>
+    <div class="box">
+      <iframe src= "https://www.marketwatch.com/story/people-want-cheap-weed-and-aurora-cannabis-is-paying-the-price-2020-02-13" width="500px" height="500px">
+      </iframe>
+    </div>
+  
+    <br>
+    
+    <br>
+    This is a live preview for <a href="https://www.jquery.com">JQuery</a>
+    <div class="box">
+      <iframe id="myFrame5" src="https://jquery.com/" width="500px" height="500px">
+      </iframe>
+    </div>
+    <BR>
+    <BR>
+    
+  <div class="container">
+    <h2>Subscribe to our Newsletter</h2>
+    <p>Receive weekly newsletters regarding currency rates and oil prices</p>
+  </div>
+
+  <div class="container" style="background-color:white">
+    <input type="text" placeholder="Name" name="name" required>
+    <input type="text" placeholder="Email address" name="mail" required>
+    <label>
+      <input type="checkbox" checked="checked" name="subscribe"> Weekly Newsletter
+    </label>
+  </div>
+
+  <div class="container" id='div1'>
+    <input type="submit" value="Subscribe">
+  </div>
+</form>
+
+
+  </div>
+
+
+</div>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+
+        $(document).ready(function () {
+            $('#div1').click(function () {
+                alert('Thank You for Subscribing!');
+            });
+        });
+
+function pickFive(array){
+
+  var links = []; 
+
+  while(links.length < 5){
+    var r = Math.floor(Math.random() * 70) + 1; 
+    if(links.indexOf(r) === -1) links.push(r);
+
+
+
+  }
+  var linkurl = []; 
+  
+for (i=0; i<5; i++){
+          linkurl.push(array[links[i]]) 
+          } 
+return linkurl; 
+}
+   
+  
+var jsonNewsData = $.ajax({
+
+          url: "getNewsData.php",
+          dataType: "json",
+          async: false
+            }).responseText;
+        var x = JSON.parse(jsonNewsData); 
+        var count = []; 
+        var names = []; 
+        for (i=0; i<x.length; i++){
+          count.push(x[i].url) 
+          
+          } 
+          for (i=0; i<x.length; i++){
+          names.push(x[i].name)
+          
+          } 
+        console.log(x); 
+        console.log(name); 
+        var test = pickFive(count);
+        var a = test[0];
+        var b = test[1];
+        var c = test[2];
+        var d = test[3];
+        var e = test[4]; 
+        console.log(a);
+        console.log(test[0]); 
+        
+document.getElementById("myFrame").src = test[0] ; 
+document.getElementById("myFrame2").src = test[1] ; 
+document.getElementById("myFrame3").src = test[2] ; 
+//document.getElementById("myFrame4").src = test[3] ; 
+//document.getElementById("myFrame5").src = test[4] ; 
+
+        
+
+</script>
+
+
+
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn1");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
+
+<div class="footer">
+  <h2>references or advertisements??? $$$$$</h2>
+</div>
+
+</body>
+</html>
